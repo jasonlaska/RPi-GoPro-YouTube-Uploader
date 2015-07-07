@@ -28,7 +28,7 @@ class GPFiles(object):
 
   def _teardown_fs(self):
     # may have to run script with sudo to execute this command
-    subprocess.call(['umount', self._mnt_path])
+    subprocess.call(['fusermount', '-u', self._mnt_path])
 
   def _valid_mount(self):
     try:
